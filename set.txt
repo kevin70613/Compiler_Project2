@@ -1,0 +1,61 @@
+First
+S  :  $ epsilon int char double float 
+Program  :  epsilon int char double float 
+DeclList  :  epsilon int char double float 
+DeclList'  :  int char double float 
+Decl  :  ; [ ( 
+VarDecl  :  int char double float 
+VarDecl'  :  ; [ 
+FunDecl  :  ( 
+VarDeclList  :  epsilon int char double float 
+ParamDeclList  :  epsilon int char double float 
+ParamDeclListTail  :  int char double float 
+ParamDeclListTail'  :  , epsilon 
+ParamDecl  :  int char double float 
+ParamDecl'  :  [ epsilon 
+Block  :  { 
+Type  :  int char double float 
+StmtList  :  ; return break if while print num ( id { - ! 
+StmtList'  :  epsilon ; return break if while print num ( id { - ! 
+Stmt  :  ; return break if while print num ( id { - ! 
+Expr  :  num ( id - ! 
+ExprIdTail  :  ( [ = epsilon + - * / == != < <= > >= && || 
+ExprArrayTail  :  = epsilon + - * / == != < <= > >= && || 
+Expr'  :  epsilon + - * / == != < <= > >= && || 
+ExprList  :  epsilon num ( id - ! 
+ExprListTail  :  num ( id - ! 
+ExprListTail'  :  , epsilon 
+UnaryOp  :  - ! 
+BinOp  :  + - * / == != < <= > >= && || 
+
+
+
+Follow 
+S  :  $ 
+Program  :  $ 
+DeclList  :  $ 
+DeclList'  :  int char double float $ 
+Decl  :  int char double float $ 
+VarDecl  :  int char double float ; return break if while print num ( id { - ! 
+VarDecl'  :  int char double float $ ; return break if while print num ( id { - ! 
+FunDecl  :  int char double float $ 
+VarDeclList  :  ; return break if while print num ( id { - ! 
+ParamDeclList  :  ) 
+ParamDeclListTail  :  ) 
+ParamDeclListTail'  :  ) 
+ParamDecl  :  , ) 
+ParamDecl'  :  , ) 
+Block  :  int char double float $ ; return break if while print num ( id { - ! else } 
+Type  :  id 
+StmtList  :  } 
+StmtList'  :  } 
+Stmt  :  ; return break if while print num ( id { - ! else } 
+Expr  :  ; ) ] , 
+ExprIdTail  :  ; ) ] , 
+ExprArrayTail  :  ; ) ] , 
+Expr'  :  ; ) ] , 
+ExprList  :  ) 
+ExprListTail  :  ) 
+ExprListTail'  :  ) 
+UnaryOp  :  num ( id - ! 
+BinOp  :  num ( id - ! 
